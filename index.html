@@ -21,8 +21,8 @@
             </div>
         </div>
         <div class="row" ng-controller="myController" ng-init="Initialized()">
-            <div class="col-xs-4" ng-repeat="model in models">
-                <div>
+            <div ng-repeat="model in models">
+                <div class="col-md-4 col-xs-12 col-sm-6">
                     <div class="panel panel-default">
                         <div class="panel-heading "> {{model.name}}
                             <p class="pull-right "> {{model.price | currency}} </p>

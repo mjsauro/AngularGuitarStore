@@ -6,7 +6,8 @@
     </ul>
     <blockquote ng-show="tab === 1"> {{model.description}} </blockquote>
     <blockquote ng-show="tab === 2"> TODO: Specifications </blockquote>
-    <blockquote ng-show="tab === 3"> TODO: Reviews </blockquote>
+    <div store-reviews ng-show="tab === 3">
+    </div>
     <button ng-disabled="model.outOfStock" class="btn btn-default">Add to Cart</button>
     <div ng-show="model.outOfStock" class="alert alert-warning">
         <p>We're out of Stock!</p>
