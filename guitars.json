@@ -1,0 +1,49 @@
+[{
+    "name": "Fender Stratocaster",
+    "price": 400,
+    "description": "A classic electric guitar",
+    "canPurchase": true,
+    "outOfStock": false,
+    "image": "images/strat.jpg",
+    "reviews": [{
+        "stars": 5,
+        "author": "Matt",
+        "body": "A great starter guitar!"
+    }]
+}, {
+    "name": "Fender Telecaster",
+    "price": 450,
+    "description": "Nice twang",
+    "canPurchase": true,
+    "outOfStock": false,
+    "image": "images/telecaster.jpg",
+    "reviews": [{
+        "stars": 4,
+        "author": "Matt",
+        "body": "Surf's up, dude!"
+    }]
+}, {
+    "name": "Gibson Les Paul",
+    "price": 500,
+    "description": "Another classic",
+    "canPurchase": false,
+    "outOfStock": true,
+    "image": "images/lespaul.jpg",
+    "reviews": [{
+        "stars": 5,
+        "author": "Matt",
+        "body": "Crunch!"
+    }]
+}, {
+    "name": "Gibson Explorer",
+    "price": 600,
+    "description": "Melt your face off",
+    "canPurchase": true,
+    "outOfStock": false,
+    "image": "images/explorer.jpg",
+    "reviews": [{
+        "stars": 5,
+        "author": "Matt",
+        "body": "Melt your face off!"
+    }]
+}]
