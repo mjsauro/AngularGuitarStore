@@ -1,4 +1,15 @@
 var storeProducts = angular.module("storeProducts", [])
+
+storeProducts.provider("avatar", function () {
+    this.$get = function () {
+        return {
+            generate: function (input) {
+                return "https://api.adorable.io/avatars/90/" + input;
+            }
+        };
+    }
+});
+
 storeProducts.directive("storePanels", function () {
     var directiveObject = {
         templateUrl: "templates/store-panels.html",
@@ -14,7 +25,7 @@ storeProducts.directive("storePanels", function () {
 storeProducts.directive("storeReviews", function () {
     var directiveObject = {
         templateUrl: "templates/store-reviews.html",
-        controller: function ($scope) {
+        controller: function ($scope, avatar) {
             $scope.AddReview = function (product) {
                 //Just to be safe, make sure to add a reviews array if it doesn't already exist
                 if (!product.reviews) {
@@ -42,6 +53,10 @@ storeProducts.directive("storeReviews", function () {
 
             $scope.FormInvalid = function () {
                 return $scope.StarsInvalid() || $scope.BodyInvalid() || $scope.AuthorInvalid();
+            }
+
+            $scope.GenerateAvatarUrl = function (review) {
+                review.avatarUrl = avatar.generate(review.author);
             }
         }
     };

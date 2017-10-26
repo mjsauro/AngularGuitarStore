@@ -7,7 +7,7 @@
     "image": "images/strat.jpg",
     "reviews": [{
         "stars": 5,
-        "author": "Matt",
+        "author": "mjsauro@gmail.com",
         "body": "A great starter guitar!"
     }]
 }, {
@@ -19,7 +19,7 @@
     "image": "images/telecaster.jpg",
     "reviews": [{
         "stars": 4,
-        "author": "Matt",
+        "author": "petersauro@gmail.com",
         "body": "Surf's up, dude!"
     }]
 }, {
@@ -31,7 +31,7 @@
     "image": "images/lespaul.jpg",
     "reviews": [{
         "stars": 5,
-        "author": "Matt",
+        "author": "lisatostisauro@gmail.com",
         "body": "Crunch!"
     }]
 }, {
@@ -43,7 +43,7 @@
     "image": "images/explorer.jpg",
     "reviews": [{
         "stars": 5,
-        "author": "Matt",
+        "author": "cjsauro@gmail.com",
         "body": "Melt your face off!"
     }]
 }]
