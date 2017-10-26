@@ -1,1 +1,7 @@
-Page 1
+<div >
+    <form ng-submit="register(email, password)" name="registration" ng-show="user == null">
+        <input type="email" name="email" ng-model="email" />
+        <input type="password" name="password" ng-model="password" />
+        <input type="submit" /> </form>
+    <p ng-hide="user == null"> You're logged in as {{user.email}} </p>
+</div>

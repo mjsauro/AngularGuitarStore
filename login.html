@@ -1,0 +1,7 @@
+<div>
+<form ng-submit="login(email, password)" name="loginForm" ng-show="user == null">
+    <input type="email" name="email" ng-model="email" />
+    <input type="password" name="password" ng-model="password" />
+    <input type="submit" /> </form>
+<p ng-hide="user == null"> You're logged in as {{user.email}} </p>
+</div>

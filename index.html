@@ -11,19 +11,19 @@
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 
-<body>
-
-
+<body ng-controller="bodyController">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#">Matt's Guitar Store</a> </div>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#"><img  src="images/guitar-icon.png" class="img-responsive" id="guitar-icon"></a> </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a ng-href="/">Home</a></li>
-                    <li><a ng-href="#!/page1">Page 1</a></li>
+                    <li ng-hide="user != null"><a ng-href="#!/page1">Register</a></li>
+                    <li ng-hide="user != null"><a ng-href="#!/login">Login</a></li>
+                    <li ng-show="user != null"><a href ng-click="logout()">Logout</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a ng-href="#!/page2">Page 2</a></li>
@@ -42,15 +42,31 @@
             </div>
         </div>
         <div ng-view></div>
+    </div>
+    <!-- scripts -->
 
-        <!-- scripts -->
-        <script src="https://code.jquery.com/jquery-3.2.1.js " integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin=" anonymous "></script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js "></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js "></script>
-        <script src="app.js "></script>
-        <script src="modules/storeProducts.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js " integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin=" anonymous "></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js "></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCytipOAe0WsM_c8Y3WDh0qlNpotsZwfds",
+            authDomain: "mattsauroangularstore.firebaseapp.com",
+            databaseURL: "https://mattsauroangularstore.firebaseio.com",
+            projectId: "mattsauroangularstore",
+            storageBucket: "",
+            messagingSenderId: "391058899377"
+        };
+        firebase.initializeApp(config);
+
+    </script>
+    <script src="app.js "></script>
+    <script src="modules/storeProducts.js"></script>
 
 </body>
 

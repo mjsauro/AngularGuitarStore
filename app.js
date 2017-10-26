@@ -13,6 +13,31 @@ function myController($scope, $http) {
 }
 
 app.controller("myController", ['$scope', '$http', myController]);
+app.controller("bodyController", function ($scope) {
+
+    $scope.register = function (email, password) {
+        firebase.auth().createUserWithEmailAndPassword(email, password);
+    }
+
+    $scope.login = function (email, password) {
+        firebase.auth().signInWithEmailAndPassword(email, password);
+    }
+
+    $scope.logout = function () {
+        firebase.auth().signOut()
+    };
+
+    $scope.onAuthStateChanged = firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            $scope.user = user;
+            //I need to call $scope.apply because angular is out of sync with this thread, and I need to notify to re-run two-way binding
+            $scope.$apply();
+        } else {
+            $scope.user = null;
+            $scope.$apply();
+        }
+    });
+})
 
 app.config(function ($routeProvider, $locationProvider) {
     //$location.html5Mode(true);
@@ -21,23 +46,8 @@ app.config(function ($routeProvider, $locationProvider) {
     }).when("/page1", {
         templateUrl: "templates/page1.html"
     }).when("/page2", {
-        templateUrl: "templates/page2.html",
-        controller: function () {}
+        templateUrl: "templates/page2.html"
+    }).when("/login", {
+        templateUrl: "login.html"
     });
 });
-
-
-//I can also attach directives to modules:
-//app.directive("myDirective", function(){
-//    var directiveObject = {
-//        template: "<div>This is a template directive.</div>"
-//    };
-//    return directiveObject;
-//});
-//A better template directive
-//app.directive("myOtherDirective", function(){
-//    var directiveObject = {
-//        templateUrl: "template.html"
-//    };
-//    return directiveObject;
-//});
