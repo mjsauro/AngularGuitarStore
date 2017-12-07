@@ -5,7 +5,7 @@ var app = angular.module("myApp", ["storeProducts", "ngRoute"]);
 //Once I have a reference to the app module, I can add other services, controllers, filters, and directives to it using built-in functions.  In this case, passing two arguments to the controller method will create a new controller
 function myController($scope, $http) {
     $scope.Initialized = function () {
-        $http.get("guitars.json").then(function (result) {
+        $http.get("pets.json").then(function (result) {
             $scope.models = result.data;
         });
     }
@@ -16,11 +16,25 @@ app.controller("myController", ['$scope', '$http', myController]);
 app.controller("bodyController", function ($scope) {
 
     $scope.register = function (email, password) {
-        firebase.auth().createUserWithEmailAndPassword(email, password);
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode);
+            alert(errorMessage);
+        });
     }
 
     $scope.login = function (email, password) {
-        firebase.auth().signInWithEmailAndPassword(email, password);
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            if (errorCode === 'auth/wrong-password') {
+                alert("wrong password");
+            } else {
+                alert("There has been an error.");
+                console.log(error.message);
+            }
+        });
     }
 
     $scope.logout = function () {
@@ -36,7 +50,9 @@ app.controller("bodyController", function ($scope) {
             $scope.user = null;
             $scope.$apply();
         }
+
     });
+
 })
 
 app.config(function ($routeProvider, $locationProvider) {

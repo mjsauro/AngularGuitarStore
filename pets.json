@@ -1,0 +1,49 @@
+[{
+    "name": "Emperor Penguin",
+    "price": 100,
+    "description": "Imported from Antarctica",
+    "canPurchase": true,
+    "outOfStock": false,
+    "image": "images/penguin.jpg",
+    "reviews": [{
+        "stars": 5,
+        "author": "mjsauro@gmail.com",
+        "body": "An animal that's fun for the whole family!"
+    }]
+}, {
+    "name": "Elephant",
+    "price": 500,
+    "description": "An animal you'll never forget",
+    "canPurchase": true,
+    "outOfStock": false,
+    "image": "images/elephant.jpg",
+    "reviews": [{
+        "stars": 4,
+        "author": "petersauro@gmail.com",
+        "body": "Great fun, but I needed to build another addition to my house."
+    }]
+}, {
+    "name": "Parrot",
+    "price": 1000,
+    "description": "A bird with a personality as colorful as its feathers",
+    "canPurchase": true,
+    "outOfStock": false,
+    "image": "images/parrot.jpg",
+    "reviews": [{
+        "stars": 1,
+        "author": "lisatostisauro@gmail.com",
+        "body": "All it does is squawk all day and insult me.  Would not reccomend."
+    }]
+}, {
+    "name": "Flying Spaghetti Monster",
+    "price": 10000,
+    "description": "All hail the Flying Spaghetti Monster",
+    "canPurchase": false,
+    "outOfStock": true,
+    "image": "images/monster.jpg",
+    "reviews": [{
+        "stars": 5,
+        "author": "cjsauro@gmail.com",
+        "body": "Owning one is a religious experience!"
+    }]
+}]

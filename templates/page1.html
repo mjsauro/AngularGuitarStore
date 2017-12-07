@@ -1,7 +1,21 @@
-<div >
-    <form ng-submit="register(email, password)" name="registration" ng-show="user == null">
-        <input type="email" name="email" ng-model="email" />
-        <input type="password" name="password" ng-model="password" />
-        <input type="submit" /> </form>
-    <p ng-hide="user == null"> You're logged in as {{user.email}} </p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h1>Register</h1>
+            <form ng-submit="register(email, password)" name="registration" ng-show="user == null">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" ng-model="email" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" ng-model="password" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" />
+                </div>
+            </form>
+            <p ng-hide="user == null"> You're logged in as {{user.email}} </p>
+        </div>
+    </div>
 </div>
