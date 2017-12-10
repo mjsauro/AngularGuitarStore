@@ -1,5 +1,8 @@
 <div class="container-fluid">
     <div class="row">
+        <div class="alert alert-danger" ng-show="hasError">
+            {{error}}
+        </div>
         <div class="col-xs-4 col-xs-offset-4">
             <form ng-submit="login(email, password)" name="loginForm" ng-show="user == null">
                 <div class="form-group">

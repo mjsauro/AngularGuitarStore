@@ -19,8 +19,9 @@ app.controller("bodyController", function ($scope) {
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
-            console.log(errorCode);
-            alert(errorMessage);
+            $scope.hasError = true;
+            $scope.error = errorMessage;
+            $scope.$apply();
         });
     }
 
@@ -28,12 +29,9 @@ app.controller("bodyController", function ($scope) {
         firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
-            if (errorCode === 'auth/wrong-password') {
-                alert("wrong password");
-            } else {
-                alert("There has been an error.");
-                console.log(error.message);
-            }
+            $scope.hasError = true;
+            $scope.error = errorMessage;
+            $scope.$apply();
         });
     }
 
